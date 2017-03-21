@@ -19,8 +19,8 @@ Instructions to get Polyglot, PyICU and Pycld2 to build on Windows 10.
 
 	This error here was an absolute NIGHTMARE:
   
-          `ICU_VERSION = subprocess.check_output(('icu-config', '--version')).strip()` 
-          `AttributeError: 'module' object has no attribute 'check_output'`
+          ICU_VERSION = subprocess.check_output(('icu-config', '--version')).strip()
+          AttributeError: 'module' object has no attribute 'check_output'
 		
 	- **To fix this, change that line in setup.py (in the PyICU folder) to:**
 	  - `ICU_VERSION = subprocess.check_output(('icuinfo', '--version')).strip()`
